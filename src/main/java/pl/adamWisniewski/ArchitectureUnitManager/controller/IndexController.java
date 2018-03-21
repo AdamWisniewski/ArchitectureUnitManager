@@ -26,4 +26,15 @@ public class IndexController {
 		return "employee";
 	}
 	
+	@PostMapping("/manager")
+	public String manager(Model model) {
+		
+		return "manager";
+	}
+	
+	@PostMapping("/admin")
+	public String admin(Model model) {
+		
+		return "admin";
+	}
 }
