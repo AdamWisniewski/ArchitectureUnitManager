@@ -1,5 +1,6 @@
 package pl.adamWisniewski.ArchitectureUnitManager.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import pl.adamWisniewski.ArchitectureUnitManager.service.CasesService;
 @Controller
 public class IndexController {
 
+	@Autowired
 	private CasesService casesService;
 
 	@GetMapping("/")
@@ -26,8 +28,8 @@ public class IndexController {
 
 //		https://stackoverflow.com/questions/36575698/spring-mvc-how-to-display-data-from-database-into-a-table
 		
-		Page<Cases> pageCases = casesService.getAll(pageable);
-		model.addAttribute("Cases", pageCases);
+//		Page<Cases> pageCases = casesService.getAll(pageable);
+//		model.addAttribute("Cases", pageCases);
 
 		return "open";
 	}
