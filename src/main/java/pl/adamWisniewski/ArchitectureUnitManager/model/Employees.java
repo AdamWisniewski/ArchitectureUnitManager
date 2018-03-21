@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,8 +21,10 @@ public class Employees {
 	private String pracownik_imie;
 
 	private String pracownik_nazwisko;
-
-	private int ID_stanowisko;
+	
+	@ManyToOne
+	@JoinColumn(name="ID_stanowisko")
+	private EmployeePosition employeePosition;
 
 	public int getID_pracownik() {
 		return ID_pracownik;
@@ -46,18 +50,14 @@ public class Employees {
 		this.pracownik_nazwisko = pracownik_nazwisko;
 	}
 
-	public int getID_stanowisko() {
-		return ID_stanowisko;
-	}
-
-	public void setID_stanowisko(int iD_stanowisko) {
-		ID_stanowisko = iD_stanowisko;
+	public EmployeePosition getID_stanowisko() {
+		return employeePosition;
 	}
 
 	@Override
 	public String toString() {
 		return "Employees [ID_pracownik=" + ID_pracownik + ", pracownik_imie=" + pracownik_imie
-				+ ", pracownik_nazwisko=" + pracownik_nazwisko + ", ID_stanowisko=" + ID_stanowisko + "]";
+				+ ", pracownik_nazwisko=" + pracownik_nazwisko + ", ID_stanowisko=" + employeePosition + "]";
 	}
 
 }
