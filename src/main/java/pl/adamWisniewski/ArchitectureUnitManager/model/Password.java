@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,8 +21,10 @@ public class Password {
 	private String login;
 
 	private int password;
-
-	private int id_permissions;
+	
+	@ManyToOne
+	@JoinColumn(name="permissions")
+	private Permissions permissions;
 
 	public int getID_password() {
 		return ID_password;
@@ -46,18 +50,14 @@ public class Password {
 		this.password = password;
 	}
 
-	public int getId_permissions() {
-		return id_permissions;
-	}
-
-	public void setId_permissions(int id_permissions) {
-		this.id_permissions = id_permissions;
+	public Permissions getId_permissions() {
+		return permissions;
 	}
 
 	@Override
 	public String toString() {
 		return "Password [ID_password=" + ID_password + ", login=" + login + ", password=" + password
-				+ ", id_permissions=" + id_permissions + "]";
+				+ ", id_permissions=" + permissions + "]";
 	}
 
 }

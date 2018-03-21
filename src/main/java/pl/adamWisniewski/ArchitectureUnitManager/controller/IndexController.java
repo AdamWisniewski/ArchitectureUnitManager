@@ -14,10 +14,9 @@ public class IndexController {
 	}
 	
 	@GetMapping("/open")
-	public String open() {
+	public String open(Model model) {
 		
 		return "open";
-		
 	}
-
+	
 }
