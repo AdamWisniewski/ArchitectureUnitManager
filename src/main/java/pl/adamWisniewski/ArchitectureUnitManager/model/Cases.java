@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "sprawy")
@@ -16,11 +17,11 @@ public class Cases {
 	@Id
 	// autoinkrementacja
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private String id;
 
-	private int sprawa_numer;
+	private String sprawa_numer;
 
-	private int sprawa_rok;
+	private String sprawa_rok;
 
 	private String data_wniosku;
 
@@ -38,7 +39,7 @@ public class Cases {
 
 	private String sprawa_opis;
 
-	private int sprawa_waga;
+	private String sprawa_waga;
 
 	@ManyToOne
 	@JoinColumn(name = "ID_sprawa_status")
@@ -52,7 +53,7 @@ public class Cases {
 
 	// ustalić dlaczego domyślnie kolumny int nie mogą być null w bazie danych
 	
-	private int decyzja_numer;
+	private String decyzja_numer;
 
 	private String decyzja_rok;
 
@@ -68,27 +69,27 @@ public class Cases {
 
 	private String komentarz;
 
-	public int getID_sprawa() {
+	public String getID_sprawa() {
 		return id;
 	}
 
-	public void setID_sprawa(int iD_sprawa) {
+	public void setID_sprawa(String iD_sprawa) {
 		id = iD_sprawa;
 	}
 
-	public int getSprawa_numer() {
+	public String getSprawa_numer() {
 		return sprawa_numer;
 	}
 
-	public void setSprawa_numer(int sprawa_numer) {
+	public void setSprawa_numer(String sprawa_numer) {
 		this.sprawa_numer = sprawa_numer;
 	}
 
-	public int getSprawa_rok() {
+	public String getSprawa_rok() {
 		return sprawa_rok;
 	}
 
-	public void setSprawa_rok(int sprawa_rok) {
+	public void setSprawa_rok(String sprawa_rok) {
 		this.sprawa_rok = sprawa_rok;
 	}
 
@@ -144,11 +145,11 @@ public class Cases {
 		this.sprawa_opis = sprawa_opis;
 	}
 
-	public int getSprawa_waga() {
+	public String getSprawa_waga() {
 		return sprawa_waga;
 	}
 
-	public void setSprawa_waga(int sprawa_waga) {
+	public void setSprawa_waga(String sprawa_waga) {
 		this.sprawa_waga = sprawa_waga;
 	}
 
@@ -168,11 +169,11 @@ public class Cases {
 		return employees;
 	}
 
-	public int getDecyzja_numer() {
+	public String getDecyzja_numer() {
 		return decyzja_numer;
 	}
 
-	public void setDecyzja_numer(int decyzja_numer) {
+	public void setDecyzja_numer(String decyzja_numer) {
 		this.decyzja_numer = decyzja_numer;
 	}
 
