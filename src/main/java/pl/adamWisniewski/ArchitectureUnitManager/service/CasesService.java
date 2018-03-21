@@ -1,8 +1,8 @@
 package pl.adamWisniewski.ArchitectureUnitManager.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import pl.adamWisniewski.ArchitectureUnitManager.model.Cases;
@@ -14,14 +14,8 @@ public class CasesService {
 	@Autowired
 	private CasesRepository casesRepo;
 
-	public Cases save(Cases cases) {
-		return casesRepo.save(cases);
-	}
-
-	public Page<Cases> getAll(Pageable pageable) {
-
-		Page<Cases> cases = casesRepo.findAll(pageable);
-		return cases;
+	public List<Cases> findAll(){
+	    return casesRepo.findAll();
 	}
 
 //	public Cases findByID_sprawa(long ID_sprawa) {
