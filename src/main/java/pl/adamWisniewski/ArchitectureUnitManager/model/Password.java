@@ -23,7 +23,7 @@ public class Password {
 	private int password;
 	
 	@ManyToOne
-	@JoinColumn(name="permissions")
+	@JoinColumn(name="ID_permissions")
 	private Permissions permissions;
 
 	public int getID_password() {
