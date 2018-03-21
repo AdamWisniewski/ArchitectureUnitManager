@@ -12,5 +12,12 @@ public class IndexController {
 
 		return "index";
 	}
+	
+	@GetMapping("/open")
+	public String open() {
+		
+		return "open";
+		
+	}
 
 }
