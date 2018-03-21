@@ -16,7 +16,7 @@ public class Cases {
 	@Id
 	// autoinkrementacja
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID_sprawa;
+	private int id;
 
 	private int sprawa_numer;
 
@@ -50,6 +50,8 @@ public class Cases {
 	@JoinColumn(name = "ID_pracownik")
 	private Employees employees;
 
+	// ustalić dlaczego domyślnie kolumny int nie mogą być null w bazie danych
+	
 	private int decyzja_numer;
 
 	private String decyzja_rok;
@@ -67,11 +69,11 @@ public class Cases {
 	private String komentarz;
 
 	public int getID_sprawa() {
-		return ID_sprawa;
+		return id;
 	}
 
 	public void setID_sprawa(int iD_sprawa) {
-		ID_sprawa = iD_sprawa;
+		id = iD_sprawa;
 	}
 
 	public int getSprawa_numer() {
@@ -208,7 +210,7 @@ public class Cases {
 
 	@Override
 	public String toString() {
-		return "Cases [ID_sprawa=" + ID_sprawa + ", sprawa_numer=" + sprawa_numer + ", sprawa_rok=" + sprawa_rok
+		return "Cases [ID_sprawa=" + id + ", sprawa_numer=" + sprawa_numer + ", sprawa_rok=" + sprawa_rok
 				+ ", data_wniosku=" + data_wniosku + ", inwestor_imie=" + inwestor_imie + ", inwestor_nazwisko="
 				+ inwestor_nazwisko + ", inwestor_nazwa=" + inwestor_nazwa + ", sprawa_adres=" + sprawa_adres
 				+ ", ID_sprawa_kategoria=" + caseCategory + ", sprawa_opis=" + sprawa_opis + ", sprawa_waga="

@@ -8,6 +8,6 @@ import pl.adamWisniewski.ArchitectureUnitManager.model.Cases;
 @Repository
 public interface CasesRepository extends JpaRepository<Cases, Long> {
 
-	Cases findAllByOrderByID_sprawaDesc();
+	Cases findAllByOrderByIdDesc();
 
 }

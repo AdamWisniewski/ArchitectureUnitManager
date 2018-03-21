@@ -24,12 +24,12 @@ public class CasesService {
 		return cases;
 	}
 
-	public Cases findByID_sprawa(long id) {
-		return casesRepo.findOne(id);
-	}
-
-	public Cases getFirst() {
-		return casesRepo.findAllByOrderByID_sprawaDesc();
-	}
+//	public Cases findByID_sprawa(long ID_sprawa) {
+//		return casesRepo.findOne(ID_sprawa);
+//	}
+//
+//	public Cases getFirst() {
+//		return casesRepo.findAllByOrderByID_sprawaDesc();
+//	}
 
 }
