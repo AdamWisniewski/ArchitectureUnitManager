@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "decyzja_rodzaj")
-public class DecyzjaRodzaj {
+public class DecisionType {
 
 	// klucz główny
 	@Id
