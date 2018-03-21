@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,17 +32,23 @@ public class Cases {
 
 	private String sprawa_adres;
 
-	private int ID_sprawa_kategoria;
+	@ManyToOne
+	@JoinColumn(name = "ID_sprawa_kategoria")
+	private CaseCategory caseCategory;
 
 	private String sprawa_opis;
 
 	private int sprawa_waga;
 
-	private int ID_sprawa_status;
+	@ManyToOne
+	@JoinColumn(name = "ID_sprawa_status")
+	private CaseStatus caseStatus;
 
 	private String sprawa_deadline;
 
-	private int ID_pracownik;
+	@ManyToOne
+	@JoinColumn(name = "ID_pracownik")
+	private Employees employees;
 
 	private int decyzja_numer;
 
@@ -48,9 +56,13 @@ public class Cases {
 
 	private String decyzja_data_wydania;
 
-	private int ID_decyzja_rodzaj;
+	@ManyToOne
+	@JoinColumn(name = "ID_decyzja_rodzaj")
+	private DecisionType decisionType;
 
-	private int ID_decyzja_status;
+	@ManyToOne
+	@JoinColumn(name = "ID_decyzja_status")
+	private DecisionStatus decisionStatus;
 
 	private String komentarz;
 
@@ -118,12 +130,8 @@ public class Cases {
 		this.sprawa_adres = sprawa_adres;
 	}
 
-	public int getID_sprawa_kategoria() {
-		return ID_sprawa_kategoria;
-	}
-
-	public void setID_sprawa_kategoria(int iD_sprawa_kategoria) {
-		ID_sprawa_kategoria = iD_sprawa_kategoria;
+	public CaseCategory getID_sprawa_kategoria() {
+		return caseCategory;
 	}
 
 	public String getSprawa_opis() {
@@ -142,12 +150,8 @@ public class Cases {
 		this.sprawa_waga = sprawa_waga;
 	}
 
-	public int getID_sprawa_status() {
-		return ID_sprawa_status;
-	}
-
-	public void setID_sprawa_status(int iD_sprawa_status) {
-		ID_sprawa_status = iD_sprawa_status;
+	public CaseStatus getID_sprawa_status() {
+		return caseStatus;
 	}
 
 	public String getSprawa_deadline() {
@@ -158,12 +162,8 @@ public class Cases {
 		this.sprawa_deadline = sprawa_deadline;
 	}
 
-	public int getID_pracownik() {
-		return ID_pracownik;
-	}
-
-	public void setID_pracownik(int iD_pracownik) {
-		ID_pracownik = iD_pracownik;
+	public Employees getID_pracownik() {
+		return employees;
 	}
 
 	public int getDecyzja_numer() {
@@ -190,20 +190,12 @@ public class Cases {
 		this.decyzja_data_wydania = decyzja_data_wydania;
 	}
 
-	public int getID_decyzja_rodzaj() {
-		return ID_decyzja_rodzaj;
+	public DecisionType getID_decyzja_rodzaj() {
+		return decisionType;
 	}
 
-	public void setID_decyzja_rodzaj(int iD_decyzja_rodzaj) {
-		ID_decyzja_rodzaj = iD_decyzja_rodzaj;
-	}
-
-	public int getID_decyzja_status() {
-		return ID_decyzja_status;
-	}
-
-	public void setID_decyzja_status(int iD_decyzja_status) {
-		ID_decyzja_status = iD_decyzja_status;
+	public DecisionStatus getID_decyzja_status() {
+		return decisionStatus;
 	}
 
 	public String getKomentarz() {
@@ -219,11 +211,11 @@ public class Cases {
 		return "Cases [ID_sprawa=" + ID_sprawa + ", sprawa_numer=" + sprawa_numer + ", sprawa_rok=" + sprawa_rok
 				+ ", data_wniosku=" + data_wniosku + ", inwestor_imie=" + inwestor_imie + ", inwestor_nazwisko="
 				+ inwestor_nazwisko + ", inwestor_nazwa=" + inwestor_nazwa + ", sprawa_adres=" + sprawa_adres
-				+ ", ID_sprawa_kategoria=" + ID_sprawa_kategoria + ", sprawa_opis=" + sprawa_opis + ", sprawa_waga="
-				+ sprawa_waga + ", ID_sprawa_status=" + ID_sprawa_status + ", sprawa_deadline=" + sprawa_deadline
-				+ ", ID_pracownik=" + ID_pracownik + ", decyzja_numer=" + decyzja_numer + ", decyzja_rok=" + decyzja_rok
-				+ ", decyzja_data_wydania=" + decyzja_data_wydania + ", ID_decyzja_rodzaj=" + ID_decyzja_rodzaj
-				+ ", ID_decyzja_status=" + ID_decyzja_status + ", komentarz=" + komentarz + "]";
+				+ ", ID_sprawa_kategoria=" + caseCategory + ", sprawa_opis=" + sprawa_opis + ", sprawa_waga="
+				+ sprawa_waga + ", ID_sprawa_status=" + caseStatus + ", sprawa_deadline=" + sprawa_deadline
+				+ ", ID_pracownik=" + employees + ", decyzja_numer=" + decyzja_numer + ", decyzja_rok=" + decyzja_rok
+				+ ", decyzja_data_wydania=" + decyzja_data_wydania + ", ID_decyzja_rodzaj=" + decisionType
+				+ ", ID_decyzja_status=" + decisionStatus + ", komentarz=" + komentarz + "]";
 	}
 
 }
