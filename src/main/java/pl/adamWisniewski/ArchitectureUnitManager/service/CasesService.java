@@ -17,6 +17,10 @@ public class CasesService {
 	public List<Cases> findAll(){
 	    return casesRepo.findAll();
 	}
+	
+	public List<Cases> findAllInProgress(){
+	    return casesRepo.getByDecyzjaNumerIsNull();
+	}
 
 //	public Cases findByID_sprawa(long ID_sprawa) {
 //		return casesRepo.findOne(ID_sprawa);

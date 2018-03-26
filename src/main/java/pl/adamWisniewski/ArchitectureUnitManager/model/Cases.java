@@ -1,5 +1,6 @@
 package pl.adamWisniewski.ArchitectureUnitManager.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,7 @@ public class Cases {
 	@Id
 	// autoinkrementacja
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
+	private int id;
 
 	private String sprawa_numer;
 
@@ -52,7 +53,8 @@ public class Cases {
 
 	// ustalić dlaczego domyślnie kolumny int nie mogą być null w bazie danych
 	
-	private String decyzja_numer;
+	@Column(name = "decyzja_numer")
+	private String decyzjaNumer;
 
 	private String decyzja_rok;
 
@@ -68,11 +70,11 @@ public class Cases {
 
 	private String komentarz;
 
-	public String getID_sprawa() {
+	public int getID_sprawa() {
 		return id;
 	}
 
-	public void setID_sprawa(String iD_sprawa) {
+	public void setID_sprawa(int iD_sprawa) {
 		id = iD_sprawa;
 	}
 
@@ -169,11 +171,11 @@ public class Cases {
 	}
 
 	public String getDecyzja_numer() {
-		return decyzja_numer;
+		return decyzjaNumer;
 	}
 
 	public void setDecyzja_numer(String decyzja_numer) {
-		this.decyzja_numer = decyzja_numer;
+		this.decyzjaNumer = decyzja_numer;
 	}
 
 	public String getDecyzja_rok() {
@@ -215,7 +217,7 @@ public class Cases {
 				+ inwestor_nazwisko + ", inwestor_nazwa=" + inwestor_nazwa + ", sprawa_adres=" + sprawa_adres
 				+ ", ID_sprawa_kategoria=" + caseCategory + ", sprawa_opis=" + sprawa_opis + ", sprawa_waga="
 				+ sprawa_waga + ", ID_sprawa_status=" + caseStatus + ", sprawa_deadline=" + sprawa_deadline
-				+ ", ID_pracownik=" + employees + ", decyzja_numer=" + decyzja_numer + ", decyzja_rok=" + decyzja_rok
+				+ ", ID_pracownik=" + employees + ", decyzja_numer=" + decyzjaNumer + ", decyzja_rok=" + decyzja_rok
 				+ ", decyzja_data_wydania=" + decyzja_data_wydania + ", ID_decyzja_rodzaj=" + decisionType
 				+ ", ID_decyzja_status=" + decisionStatus + ", komentarz=" + komentarz + "]";
 	}

@@ -22,7 +22,7 @@ public class OpenController {
 
 	@GetMapping("/open")
 	public String open(Model model) {
-		List<Cases> casesList = casesService.findAll();
+		List<Cases> casesList = casesService.findAllInProgress();
 		model.addAttribute("casesList", casesList);
 		return "open";
 	}
