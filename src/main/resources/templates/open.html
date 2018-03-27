@@ -36,7 +36,12 @@
 	</form>
 
 	<!-- 	authority level EMPLOYEE -->
-	<div sec:authorize = "hasAnyAuthority('employee', 'manager', 'admin')">employee panel</div>
+	<div sec:authorize = "hasAnyAuthority('employee', 'manager', 'admin')">
+	employee panel
+	
+	<a th:href="@{/employee/casesInProgress}">Moje sprawy w trakcie</a>
+	
+	</div>
 
 	<!-- 	authority level MANAGER -->
 	<div sec:authorize = "hasAnyAuthority('manager', 'admin')">manager panel</div>

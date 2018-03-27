@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Tryb publiczny</title>
+
+</head>
+<body>
+
+	<a>Sprawy w trakcie</a>
+	<br />
+
+	<!-- 	<div th:if="${#lists.isEmpty(users)}">Empty list users!</div>
+	<div th:if="${not #lists.isEmpty(users)}"> -->
+	<table class="table table-striped">
+
+		<tr>
+			<th>numer sprawy</th>
+			<th>data wniosku</th>
+			<th>data wydania decyzji</th>
+			<th>inwestor imie</th>
+			<th>inwestor nazwisko</th>
+			<th>inwestor nazwa</th>
+			<th>sprawa adres</th>
+			<th>sprawa waga</th>
+		</tr>
+		<tr th:each="cases : ${casesList}">
+			<td th:text="${cases.sprawa_numer}" />
+			<td th:text="${cases.data_wniosku}" />
+			<td th:text="${cases.decyzja_data_wydania}" />
+			<td th:text="${cases.inwestor_imie}" />
+			<td th:text="${cases.inwestor_nazwisko}" />
+			<td th:text="${cases.inwestor_nazwa}" />
+			<td th:text="${cases.sprawa_adres}" />
+			<td th:text="${cases.sprawa_waga}" />
+		</tr>
+
+
+	</table>
+	<!-- </div> -->
+
+</body>
+</html>

@@ -45,13 +45,13 @@ public class IndexController {
 		return "index";
 	}
 
-	@PostMapping("/employee")
-	public String employee(int employeeId, Model model) {
-		List<Cases> casesList = casesService.findForEmployee(employeeId);
-		model.addAttribute("casesList", casesList);
-
-		return "employee";
-	}
+//	@PostMapping("/employee")
+//	public String employee(int employeeId, Model model) {
+//		List<Cases> casesList = casesService.findForEmployee(employeeId);
+//		model.addAttribute("casesList", casesList);
+//
+//		return "employee";
+//	}
 
 	@PostMapping("/manager")
 	public String manager(Model model) {

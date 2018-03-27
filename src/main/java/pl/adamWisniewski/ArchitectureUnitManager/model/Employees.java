@@ -1,5 +1,6 @@
 package pl.adamWisniewski.ArchitectureUnitManager.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,22 +17,24 @@ public class Employees {
 	@Id
 	// autoinkrementacja
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID_pracownik;
+	@Column(name = "ID_pracownik")
+	private int IdPracownik;
 
 	private String pracownik_imie;
 
-	private String pracownik_nazwisko;
+	@Column(name = "pracownik_nazwisko")
+	private String pracownikNazwisko;
 	
 	@ManyToOne
 	@JoinColumn(name="ID_stanowisko")
 	private EmployeePosition employeePosition;
 
 	public int getID_pracownik() {
-		return ID_pracownik;
+		return IdPracownik;
 	}
 
 	public void setID_pracownik(int iD_pracownik) {
-		ID_pracownik = iD_pracownik;
+		IdPracownik = iD_pracownik;
 	}
 
 	public String getPracownik_imie() {
@@ -43,11 +46,11 @@ public class Employees {
 	}
 
 	public String getPracownik_nazwisko() {
-		return pracownik_nazwisko;
+		return pracownikNazwisko;
 	}
 
 	public void setPracownik_nazwisko(String pracownik_nazwisko) {
-		this.pracownik_nazwisko = pracownik_nazwisko;
+		this.pracownikNazwisko = pracownik_nazwisko;
 	}
 
 	public EmployeePosition getID_stanowisko() {
@@ -56,8 +59,10 @@ public class Employees {
 
 	@Override
 	public String toString() {
-		return "Employees [ID_pracownik=" + ID_pracownik + ", pracownik_imie=" + pracownik_imie
-				+ ", pracownik_nazwisko=" + pracownik_nazwisko + ", ID_stanowisko=" + employeePosition + "]";
+		return "Employees [IdPracownik=" + IdPracownik + ", pracownik_imie=" + pracownik_imie + ", pracownikNazwisko="
+				+ pracownikNazwisko + ", employeePosition=" + employeePosition + "]";
 	}
+
+	
 
 }
