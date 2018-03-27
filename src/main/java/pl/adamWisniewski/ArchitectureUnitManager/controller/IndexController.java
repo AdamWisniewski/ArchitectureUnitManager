@@ -13,6 +13,12 @@ public class IndexController {
 
 		return "index";
 	}
+	
+	@GetMapping("/open")
+	public String open(Model model) {
+
+		return "open";
+	}
 
 	@PostMapping("/employee")
 	public String employee(Model model) {

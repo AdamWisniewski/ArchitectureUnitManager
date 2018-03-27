@@ -20,11 +20,11 @@ public class OpenController {
 		this.casesService = casesService;
 	}
 
-	@GetMapping("/open")
+	@GetMapping("/open/casesInProgress")
 	public String open(Model model) {
 		List<Cases> casesList = casesService.findAllInProgress();
 		model.addAttribute("casesList", casesList);
-		return "open";
+		return "open/casesInProgress";
 	}
 
 
