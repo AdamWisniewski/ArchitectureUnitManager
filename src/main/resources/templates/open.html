@@ -18,8 +18,11 @@
 	<a>Wybierz działanie</a>
 	<br />
 
+	<a sec:authorize="isAuthenticated()" href="/logout">logout</a>
+	<br />
+		
+		
 	<!-- authority level OPEN -->
-
 
 	<a th:href="@{/open/casesInProgress}">Sprawy w trakcie (cały
 		wydział)</a>
@@ -33,15 +36,13 @@
 	</form>
 
 	<!-- 	authority level EMPLOYEE -->
-	<div sec:authorize="isAuthenticated()">employee panel</div>
+	<div sec:authorize = "hasAnyAuthority('employee', 'manager', 'admin')">employee panel</div>
 
 	<!-- 	authority level MANAGER -->
-
-	<div>manager panel</div>
+	<div sec:authorize = "hasAnyAuthority('manager', 'admin')">manager panel</div>
 
 	<!-- 	authority level ADMIN -->
-
-	<div>admin panel</div>
+	<div sec:authorize = "hasAuthority('admin')">admin panel</div>
 
 </body>
 </html>

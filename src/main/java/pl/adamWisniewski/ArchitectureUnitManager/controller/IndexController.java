@@ -38,6 +38,12 @@ public class IndexController {
 
 		return "login";
 	}
+	
+	@GetMapping("/logout")
+	public String logout(Model model) {
+
+		return "index";
+	}
 
 	@PostMapping("/employee")
 	public String employee(int employeeId, Model model) {
