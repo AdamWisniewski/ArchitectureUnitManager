@@ -32,6 +32,12 @@ public class IndexController {
 
 		return "open";
 	}
+	
+	@GetMapping("/login")
+	public String login(Model model) {
+
+		return "login";
+	}
 
 	@PostMapping("/employee")
 	public String employee(int employeeId, Model model) {

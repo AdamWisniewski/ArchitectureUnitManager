@@ -23,11 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
 			.jdbcAuthentication()
-			.usersByUsernameQuery("SELECT login, password FROM password WHERE login = ?")
+			.usersByUsernameQuery("SELECT login, password, active FROM password WHERE login = ?")
 			.authoritiesByUsernameQuery(
-					"SELECT u.login, r.role FROM password u "
-					+ "inner join permissions r on r.permissions = u.id_permissions "
-					+ "where u.login=?"
+					"SELECT p.login, r.permissions FROM password p left join permissions r on r.id_permissions = p.id_permissions where p.login = ?;"
 					)
 			.dataSource(dataSource);
 //			.passwordEncoder(bCryptPasswordEncoder);

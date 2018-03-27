@@ -22,9 +22,19 @@ public class Password {
 
 	private int password;
 	
+	private boolean active;
+
 	@ManyToOne
 	@JoinColumn(name="ID_permissions")
 	private Permissions permissions;
+	
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 
 	public int getID_password() {
 		return ID_password;
@@ -56,8 +66,10 @@ public class Password {
 
 	@Override
 	public String toString() {
-		return "Password [ID_password=" + ID_password + ", login=" + login + ", password=" + password
-				+ ", id_permissions=" + permissions + "]";
+		return "Password [ID_password=" + ID_password + ", login=" + login + ", password=" + password + ", active="
+				+ active + ", permissions=" + permissions + "]";
 	}
+
+
 
 }
