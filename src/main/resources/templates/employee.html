@@ -10,7 +10,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 
-<title>Tryb publiczny</title>
+<title>Tryb pracownika</title>
 
 </head>
 <body>
@@ -25,6 +25,36 @@
 		<button type="submit" value="adress" class="btn btn-primary"
 			id="loginButton">Wyszukaj sprawy dla adresu (cały wydział)</button>
 	</form>
+
+	<a>Moje sprawy w trakcie</a>
+
+	<!-- 	tabela ze sprawami pracownika -->
+
+	<table class="table table-striped">
+		<tr>
+			<th>numer sprawy</th>
+			<th>data wniosku</th>
+			<th>data wydania decyzji</th>
+			<th>inwestor imie</th>
+			<th>inwestor nazwisko</th>
+			<th>inwestor nazwa</th>
+			<th>sprawa adres</th>
+			<th>sprawa waga</th>
+		</tr>
+		<tr th:each="cases : ${casesList}">
+			<td th:text="${cases.sprawa_numer}" />
+			<td th:text="${cases.data_wniosku}" />
+			<td th:text="${cases.decyzja_data_wydania}" />
+			<td th:text="${cases.inwestor_imie}" />
+			<td th:text="${cases.inwestor_nazwisko}" />
+			<td th:text="${cases.inwestor_nazwa}" />
+			<td th:text="${cases.sprawa_adres}" />
+			<td th:text="${cases.sprawa_waga}" />
+		</tr>
+
+	</table>
+
+	<!--  -->
 
 </body>
 </html>

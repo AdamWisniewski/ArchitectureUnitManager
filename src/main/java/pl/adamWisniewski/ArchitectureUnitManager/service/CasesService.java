@@ -25,6 +25,10 @@ public class CasesService {
 	public List<Cases> findByAdress(String adres){
 	    return casesRepo.getBySprawaAdres(adres);
 	}
+	
+	public List<Cases> findForEmployee(int employeeId){
+	    return casesRepo.getByEmployees(employeeId);
+	}
 
 
 }
