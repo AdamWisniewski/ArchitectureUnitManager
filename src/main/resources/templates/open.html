@@ -17,14 +17,31 @@
 
 	<a>Wybierz działanie</a>
 	<br />
-	<a th:href="@{/open/casesInProgress}">Sprawy w trakcie (cały wydział)</a>
-	<a th:href="@{/open/casesFinished}">Sprawy zakonczone (cały wydział)</a>
+
+	<!-- authority level OPEN -->
+
+
+	<a th:href="@{/open/casesInProgress}">Sprawy w trakcie (cały
+		wydział)</a>
+	<a th:href="@{/open/casesFinished}">Sprawy zakonczone (cały
+		wydział)</a>
 	<form name="casesOnAdress" th:action="@{/open/casesOnAdress}"
 		method="get">
 		<input type="text" name="adress" />
 		<button type="submit" value="adress" class="btn btn-primary"
 			id="loginButton">Wyszukaj sprawy dla adresu (cały wydział)</button>
 	</form>
+
+	<!-- 	authority level EMPLOYEE -->
+	<div sec:authorize="isAuthenticated()">employee panel</div>
+
+	<!-- 	authority level MANAGER -->
+
+	<div>manager panel</div>
+
+	<!-- 	authority level ADMIN -->
+
+	<div>admin panel</div>
 
 </body>
 </html>
