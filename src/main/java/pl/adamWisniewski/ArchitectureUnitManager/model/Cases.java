@@ -31,7 +31,8 @@ public class Cases {
 
 	private String inwestor_nazwa;
 
-	private String sprawa_adres;
+	@Column(name = "sprawa_adres")
+	private String sprawaAdres;
 
 	@ManyToOne
 	@JoinColumn(name = "ID_sprawa_kategoria")
@@ -127,11 +128,11 @@ public class Cases {
 	}
 
 	public String getSprawa_adres() {
-		return sprawa_adres;
+		return sprawaAdres;
 	}
 
 	public void setSprawa_adres(String sprawa_adres) {
-		this.sprawa_adres = sprawa_adres;
+		this.sprawaAdres = sprawa_adres;
 	}
 
 	public CaseCategory getID_sprawa_kategoria() {
@@ -214,7 +215,7 @@ public class Cases {
 	public String toString() {
 		return "Cases [ID_sprawa=" + id + ", sprawa_numer=" + sprawa_numer + ", sprawa_rok=" + sprawa_rok
 				+ ", data_wniosku=" + data_wniosku + ", inwestor_imie=" + inwestor_imie + ", inwestor_nazwisko="
-				+ inwestor_nazwisko + ", inwestor_nazwa=" + inwestor_nazwa + ", sprawa_adres=" + sprawa_adres
+				+ inwestor_nazwisko + ", inwestor_nazwa=" + inwestor_nazwa + ", sprawa_adres=" + sprawaAdres
 				+ ", ID_sprawa_kategoria=" + caseCategory + ", sprawa_opis=" + sprawa_opis + ", sprawa_waga="
 				+ sprawa_waga + ", ID_sprawa_status=" + caseStatus + ", sprawa_deadline=" + sprawa_deadline
 				+ ", ID_pracownik=" + employees + ", decyzja_numer=" + decyzjaNumer + ", decyzja_rok=" + decyzja_rok

@@ -17,9 +17,24 @@
 
 	<a>Wybierz działanie</a>
 	<br />
-	<form name="casesInProgress" th:action="@{/open/casesInProgress}" method="get" id="casesInProgress">
+	<form name="casesInProgress" th:action="@{/open/casesInProgress}"
+		method="get" id="casesInProgress">
 		<button type="submit" class="btn btn-primary" id="loginButton">Sprawy w trakcie prowadzenia</button>
 	</form>
+	<form name="casesFinished" th:action="@{/open/casesFinished}"
+		method="get" id="casesFinished">
+		<button type="submit" class="btn btn-primary" id="loginButton">Sprawy zakonczone</button>
+	</form>
+	<form name="casesOnAdress" th:action="@{/open/casesOnAdress}" method="get">
+		<input type="text" name="adress"/>
+		<button type="submit" value="adress" class="btn btn-primary" id="loginButton">Wyszukaj sprawy dla adresu</button>
+	</form>
+	
+	
+<!-- 	<form name="casesOnAdress" th:action="@{/open/casesOnAdress}" method="post" th:object="${adress}">
+		<input type="text" th:field="*{adress}" placeholder="adress" />
+		<button type="submit" class="btn btn-primary" id="loginButton">Wyszukaj sprawy dla adresu</button>
+	</form> -->
 
 
 </body>

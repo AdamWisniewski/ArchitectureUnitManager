@@ -13,5 +13,9 @@ public interface CasesRepository extends JpaRepository<Cases, Long> {
 	Cases findAllByOrderByIdDesc();
 	
 	List<Cases> getByDecyzjaNumerIsNull();
+	
+	List<Cases> getByDecyzjaNumerIsNotNull();
+	
+	List<Cases> getBySprawaAdres(String adres);
 
 }

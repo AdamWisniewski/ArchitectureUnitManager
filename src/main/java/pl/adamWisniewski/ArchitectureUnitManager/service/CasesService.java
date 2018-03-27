@@ -14,20 +14,17 @@ public class CasesService {
 	@Autowired
 	private CasesRepository casesRepo;
 
-	public List<Cases> findAll(){
-	    return casesRepo.findAll();
-	}
-	
 	public List<Cases> findAllInProgress(){
 	    return casesRepo.getByDecyzjaNumerIsNull();
 	}
+	
+	public List<Cases> findAllFinished(){
+	    return casesRepo.getByDecyzjaNumerIsNotNull();
+	}
+	
+	public List<Cases> findByAdress(String adres){
+	    return casesRepo.getBySprawaAdres(adres);
+	}
 
-//	public Cases findByID_sprawa(long ID_sprawa) {
-//		return casesRepo.findOne(ID_sprawa);
-//	}
-//
-//	public Cases getFirst() {
-//		return casesRepo.findAllByOrderByID_sprawaDesc();
-//	}
 
 }
