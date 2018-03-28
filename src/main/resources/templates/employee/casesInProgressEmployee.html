@@ -32,6 +32,7 @@
 			<th>inwestor nazwa</th>
 			<th>sprawa adres</th>
 			<th>sprawa waga</th>
+			<th>Edit</th>
 		</tr>
 		<tr th:each="cases : ${casesList}">
 			<td th:text="${cases.id}" />
@@ -43,7 +44,7 @@
 			<td th:text="${cases.inwestor_nazwa}" />
 			<td th:text="${cases.sprawa_adres}" />
 			<td th:text="${cases.sprawa_waga}" />
-			<td><a th:href="${'/cases/edit/' +cases.id}">Edit</a></td>
+			<td><a th:href="${'/case/edit/'+cases.id}">Edit</a></td>
 		</tr>
 
 

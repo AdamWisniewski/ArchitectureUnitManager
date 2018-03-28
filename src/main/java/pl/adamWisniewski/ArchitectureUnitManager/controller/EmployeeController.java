@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import pl.adamWisniewski.ArchitectureUnitManager.model.Cases;
 import pl.adamWisniewski.ArchitectureUnitManager.model.Employees;
@@ -27,24 +28,22 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
-	@GetMapping("/employee/casesInProgress")
+	@GetMapping("/employee/casesInProgressEmployee")
 	public String dispCasesInProgress(Model model) {
 		Employees matchedEmployee = getLoggedEmployee();
 		List<Cases> casesList = casesService.findAllInProgressForEmployee(matchedEmployee);
 		model.addAttribute("casesList", casesList);
-		return "employee/casesInProgress";
+		return "employee/casesInProgressEmployee";
 	}
 
-	
-
-	@GetMapping("/employee/casesFinished")
+	@GetMapping("/employee/casesFinishedEmployee")
 	public String dispCasesFinished(Model model) {
 		Employees matchedEmployee = getLoggedEmployee();
 		List<Cases> casesList = casesService.findAllFinishedForEmployee(matchedEmployee);
 		model.addAttribute("casesList", casesList);
-		return "employee/casesFinished";
+		return "employee/casesFinishedEmployee";
 	}
-	
+
 	private Employees getLoggedEmployee() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username = ((UserDetails) principal).getUsername();

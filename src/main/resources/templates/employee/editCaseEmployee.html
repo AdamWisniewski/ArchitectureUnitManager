@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Edycja</title>
+
+</head>
+<body>
+
+	<a>Edycja sprawy</a>
+	<br />
+
+	<!-- 	<div th:if="${#lists.isEmpty(users)}">Empty list users!</div>
+	<div th:if="${not #lists.isEmpty(users)}"> -->
+
+
+	<form th:action="@{/case/save}" method="post" th:object="${cases}">
+		<input type="hidden" th:field="*{id}" />
+
+		<div class="control-group">
+			<div class="form-group floating-label-form-group controls">
+				<label>Numer decyzji</label> <input type="text"
+					th:field="*{decyzjaNumer}" class="form-control"
+					placeholder="decyzjaNumer" id="decyzjaNumer" />
+				<p class="help-block text-danger"></p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+		</div>
+
+	</form>
+
+
+</body>
+</html>

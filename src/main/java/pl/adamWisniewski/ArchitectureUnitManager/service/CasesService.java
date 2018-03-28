@@ -14,6 +14,10 @@ public class CasesService {
 
 	@Autowired
 	private CasesRepository casesRepo;
+	
+	public Cases findCaseById(int id){
+	    return casesRepo.getById(id);
+	}
 
 	public List<Cases> findAllInProgress(){
 	    return casesRepo.getByDecyzjaNumerIsNull();
@@ -33,6 +37,10 @@ public class CasesService {
 	
 	public List<Cases> findAllFinishedForEmployee(Employees emp){
 	    return casesRepo.getByEmployeesAndDecyzjaNumerIsNotNull(emp);
+	}
+	
+	public Cases save(Cases c) {
+		return casesRepo.save(c);
 	}
 
 

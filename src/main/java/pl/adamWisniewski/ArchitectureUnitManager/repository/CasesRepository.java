@@ -13,6 +13,8 @@ public interface CasesRepository extends JpaRepository<Cases, Long> {
 
 	Cases findAllByOrderByIdDesc();
 	
+	Cases getById(int id);
+	
 	List<Cases> getByDecyzjaNumerIsNull();
 	
 	List<Cases> getByDecyzjaNumerIsNotNull();
@@ -22,5 +24,7 @@ public interface CasesRepository extends JpaRepository<Cases, Long> {
 	List<Cases> getByEmployeesAndDecyzjaNumerIsNull(Employees emp);
 	
 	List<Cases> getByEmployeesAndDecyzjaNumerIsNotNull(Employees emp);
+	
+	
 
 }
