@@ -30,6 +30,10 @@ public class CasesService {
 	public List<Cases> findAllInProgressForEmployee(Employees emp){
 	    return casesRepo.getByEmployeesAndDecyzjaNumerIsNull(emp);
 	}
+	
+	public List<Cases> findAllFinishedForEmployee(Employees emp){
+	    return casesRepo.getByEmployeesAndDecyzjaNumerIsNotNull(emp);
+	}
 
 
 }

@@ -20,5 +20,7 @@ public interface CasesRepository extends JpaRepository<Cases, Long> {
 	List<Cases> getBySprawaAdres(String adres);
 	
 	List<Cases> getByEmployeesAndDecyzjaNumerIsNull(Employees emp);
+	
+	List<Cases> getByEmployeesAndDecyzjaNumerIsNotNull(Employees emp);
 
 }

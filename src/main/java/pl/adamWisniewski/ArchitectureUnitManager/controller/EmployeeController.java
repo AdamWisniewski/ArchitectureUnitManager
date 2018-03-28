@@ -39,8 +39,8 @@ public class EmployeeController {
 
 	@GetMapping("/employee/casesFinished")
 	public String dispCasesFinished(Model model) {
-		// refactor method like upper one
-		List<Cases> casesList = casesService.findAllFinished();
+		Employees matchedEmployee = getLoggedEmployee();
+		List<Cases> casesList = casesService.findAllFinishedForEmployee(matchedEmployee);
 		model.addAttribute("casesList", casesList);
 		return "employee/casesFinished";
 	}
