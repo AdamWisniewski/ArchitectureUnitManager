@@ -50,6 +50,7 @@
 
 	<!-- 	authority level ADMIN -->
 	<div sec:authorize = "hasAuthority('admin')">admin panel</div>
+	<a th:href="@{/admin/displayUsers}">użytkownicy systemu</a>
 
 </body>
 </html>

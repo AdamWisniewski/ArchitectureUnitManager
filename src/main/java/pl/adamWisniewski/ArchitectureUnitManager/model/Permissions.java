@@ -1,6 +1,5 @@
 package pl.adamWisniewski.ArchitectureUnitManager.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,7 @@ public class Permissions {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int ID_permissions;
 
-	@Column
+
 	private String permissions;
 
 	public int getID_permissions() {
@@ -40,6 +39,10 @@ public class Permissions {
 	public String toString() {
 		return "Permissions [ID_permissions=" + ID_permissions + ", permissions=" + permissions + "]";
 	}
+
+	
+
+	
 
 	
 

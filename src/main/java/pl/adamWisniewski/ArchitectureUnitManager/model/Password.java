@@ -27,14 +27,6 @@ public class Password {
 	@ManyToOne
 	@JoinColumn(name="ID_permissions")
 	private Permissions permissions;
-	
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
 
 	public int getID_password() {
 		return ID_password;
@@ -60,8 +52,20 @@ public class Password {
 		this.password = password;
 	}
 
-	public Permissions getId_permissions() {
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public Permissions getPermissions() {
 		return permissions;
+	}
+
+	public void setPermissions(Permissions permissions) {
+		this.permissions = permissions;
 	}
 
 	@Override
@@ -69,7 +73,7 @@ public class Password {
 		return "Password [ID_password=" + ID_password + ", login=" + login + ", password=" + password + ", active="
 				+ active + ", permissions=" + permissions + "]";
 	}
-
-
+	
+	
 
 }
