@@ -71,12 +71,12 @@ public class Cases {
 
 	private String komentarz;
 
-	public int getID_sprawa() {
+	public int getId() {
 		return id;
 	}
 
-	public void setID_sprawa(int iD_sprawa) {
-		id = iD_sprawa;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getSprawa_numer() {

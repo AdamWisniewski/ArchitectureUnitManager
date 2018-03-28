@@ -23,6 +23,7 @@
 	<table class="table table-striped">
 
 		<tr>
+			<th>id sprawy</th>
 			<th>numer sprawy</th>
 			<th>data wniosku</th>
 			<th>data wydania decyzji</th>
@@ -33,6 +34,7 @@
 			<th>sprawa waga</th>
 		</tr>
 		<tr th:each="cases : ${casesList}">
+			<td th:text="${cases.id}" />
 			<td th:text="${cases.sprawa_numer}" />
 			<td th:text="${cases.data_wniosku}" />
 			<td th:text="${cases.decyzja_data_wydania}" />
@@ -41,6 +43,7 @@
 			<td th:text="${cases.inwestor_nazwa}" />
 			<td th:text="${cases.sprawa_adres}" />
 			<td th:text="${cases.sprawa_waga}" />
+			<td><a th:href="${'/cases/edit/' +cases.id}">Edit</a></td>
 		</tr>
 
 
