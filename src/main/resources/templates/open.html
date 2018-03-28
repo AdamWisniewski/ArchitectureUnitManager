@@ -46,6 +46,7 @@
 
 	<!-- 	authority level MANAGER -->
 	<div sec:authorize = "hasAnyAuthority('manager', 'admin')">manager panel</div>
+	<a th:href="@{/manager/overloadManager}">obciążenie pracowników</a>
 
 	<!-- 	authority level ADMIN -->
 	<div sec:authorize = "hasAuthority('admin')">admin panel</div>

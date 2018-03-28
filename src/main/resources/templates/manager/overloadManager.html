@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Tryb publiczny</title>
+
+</head>
+<body>
+
+	<a>Obciążenie pracowników pracą</a>
+	<br />
+
+	<!-- 	<div th:if="${#lists.isEmpty(users)}">Empty list users!</div>
+	<div th:if="${not #lists.isEmpty(users)}"> -->
+	<table class="table table-striped">
+
+		<tr>
+			<th>imię</th>
+			<th>nazwisko</th>
+			<th>stanowisko</th>
+			<th>liczba prowadzonych spraw</th>
+			<th>waga prowadzonych spraw</th>
+			
+		</tr>
+		<tr th:each="employee : employeeOverloadList">
+			<td th:text="${employee.sprawa_numer}" />
+			<td th:text="${employee.data_wniosku}" />
+			<td th:text="${employee.decyzja_data_wydania}" />
+			<td th:text="${employee.inwestor_imie}" />
+			<td th:text="${employee.inwestor_nazwisko}" />
+		</tr>
+
+
+	</table>
+	<!-- </div> -->
+
+</body>
+</html>
