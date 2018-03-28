@@ -39,8 +39,8 @@
 	<div sec:authorize = "hasAnyAuthority('employee', 'manager', 'admin')">
 	employee panel
 	
-	<a th:href="@{/employee/casesInProgress}">Moje sprawy w trakcie</a>
-	<a th:href="@{/employee/casesFinished}">Moje sprawy zakończone</a>
+	<a th:href="@{/employee/casesInProgressEmployee}">Moje sprawy w trakcie</a>
+	<a th:href="@{/employee/casesFinishedEmployee}">Moje sprawy zakończone</a>
 	
 	</div>
 
