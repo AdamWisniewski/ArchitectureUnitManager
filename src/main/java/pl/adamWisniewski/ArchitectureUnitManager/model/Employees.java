@@ -29,12 +29,12 @@ public class Employees {
 	@JoinColumn(name="ID_stanowisko")
 	private EmployeePosition employeePosition;
 
-	public int getID_pracownik() {
+	public int getIdPracownik() {
 		return IdPracownik;
 	}
 
-	public void setID_pracownik(int iD_pracownik) {
-		IdPracownik = iD_pracownik;
+	public void setIdPracownik(int idPracownik) {
+		IdPracownik = idPracownik;
 	}
 
 	public String getPracownik_imie() {

@@ -23,19 +23,17 @@
 	<table class="table table-striped">
 
 		<tr>
+			<th>id</th>
 			<th>imię</th>
 			<th>nazwisko</th>
 			<th>stanowisko</th>
-			<th>liczba prowadzonych spraw</th>
-			<th>waga prowadzonych spraw</th>
 			
 		</tr>
-		<tr th:each="employee : employeeOverloadList">
-			<td th:text="${employee.sprawa_numer}" />
-			<td th:text="${employee.data_wniosku}" />
-			<td th:text="${employee.decyzja_data_wydania}" />
-			<td th:text="${employee.inwestor_imie}" />
-			<td th:text="${employee.inwestor_nazwisko}" />
+		<tr th:each="employee : ${employeeList}">
+			<td th:text="${employee.IdPracownik}" />
+			<td th:text="${employee.pracownik_imie}" />
+			<td th:text="${employee.pracownik_nazwisko}" />
+			<td th:text="${employee.ID_stanowisko.stanowisko}" />
 		</tr>
 
 

@@ -1,5 +1,7 @@
 package pl.adamWisniewski.ArchitectureUnitManager.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +14,12 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepo;
 
-//	public int findEmployeeId(String pracownikNazwisko){
-//	     Employees tempEmployee = employeeRepo.getByPracownikNazwisko(pracownikNazwisko);
-//	     return tempEmployee.getID_pracownik();
-//	}
-	
 	public Employees findEmployee(String pracownikNazwisko){
 	     return employeeRepo.getByPracownikNazwisko(pracownikNazwisko);
+	}
+	
+	public List<Employees> findAll(){
+	     return employeeRepo.findAll();
 	}
 		
 }
