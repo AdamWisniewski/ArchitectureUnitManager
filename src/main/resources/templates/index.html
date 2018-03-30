@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-<head>
+  <head th:replace="fragments/headerinc :: head"></head>
+   
+  <body>
+  
+  <header th:replace="fragments/navigation :: header"></header>
 
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
+    <!-- Page Content -->
 
-<title>Architecture Unit Manager Homepage</title>
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</head>
-<body>
+  </body>
 
-	<a>Witaj w systemie ewidencji spraw Wydziału Architektury i
-		Budownictwa Powiatu X</a>
-
-	<a th:href="@{/login}">Logowanie</a>
-	<a th:href="@{/open}">Przeglądaj bez zalogowania</a>
-
-
-</body>
 </html>
