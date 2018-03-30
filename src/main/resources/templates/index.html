@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-  <head th:replace="fragments/headerinc :: head"></head>
-   
-  <body>
-  
-  <header th:replace="fragments/navigation :: header"></header>
+<head th:replace="fragments/headerinc :: head"></head>
 
-    <!-- Page Content -->
+<body>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<header th:replace="fragments/navigation :: header"></header>
 
-  </body>
+	<!-- Page Content -->
+
+	<section id="about">
+		<div class="container2">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<h2>Welcome to Architecture Unit Manager</h2>
+					<br /> <a th:href="@{/login}">Login</a> <br /> <br /> <a
+						th:href="@{/open}">Go to public panel</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
 
 </html>

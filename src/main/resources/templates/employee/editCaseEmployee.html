@@ -2,21 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-<head>
+<head th:replace="fragments/headerinc :: head"></head>
 
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-
-<title>Edycja</title>
-
-</head>
 <body>
 
-	<a>Edycja sprawy</a>
-	<br />
+	<header th:replace="fragments/navigation :: header"></header>
+
+	<!-- Page Content -->
+
+	<div id="table">
+
+	<h2 id="table-title">Edit Case</h2>
 
 	<!-- 	<div th:if="${#lists.isEmpty(users)}">Empty list users!</div>
 	<div th:if="${not #lists.isEmpty(users)}"> -->
@@ -39,7 +35,12 @@
 		</div>
 
 	</form>
+	</div>
 
+<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

@@ -2,55 +2,60 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-<head>
+<head th:replace="fragments/headerinc :: head"></head>
 
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-
-<title>Tryb publiczny</title>
-
-</head>
 <body>
 
-	<a>Wybierz działanie</a>
-	<br />
+	<header th:replace="fragments/navigation :: header"></header>
 
-	<a sec:authorize="isAuthenticated()" href="/logout">logout</a>
-	<br />
-		
-		
-	<!-- authority level OPEN -->
+	<!-- Page Content -->
 
-	<a th:href="@{/open/casesInProgress}">Sprawy w trakcie (cały
-		wydział)</a>
-	<a th:href="@{/open/casesFinished}">Sprawy zakonczone (cały
-		wydział)</a>
-	<form name="casesOnAdress" th:action="@{/open/casesOnAdress}"
-		method="get">
-		<input type="text" name="adress" />
-		<button type="submit" value="adress" class="btn btn-primary"
-			id="loginButton">Wyszukaj sprawy dla adresu (cały wydział)</button>
-	</form>
+	<section id="about">
+		<div class="container2">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<!-- authority level OPEN -->
+					<h4>public panel</h4>
+					<a th:href="@{/open/casesInProgress}">Cases in progress (all Unit)</a><br/> 
+					<a th:href="@{/open/casesFinished}">Cases finished (all Unit)</a>
+					<form name="casesOnAdress" th:action="@{/open/casesOnAdress}"
+						method="get">
+						<input type="text" name="adress" />
+						<button type="submit" value="adress" class="btn btn-primary"
+							id="loginButton">Find case for adress (all Unit)</button>
+					</form><br/> 
 
-	<!-- 	authority level EMPLOYEE -->
-	<div sec:authorize = "hasAnyAuthority('employee', 'manager', 'admin')">
-	employee panel
-	
-	<a th:href="@{/employee/casesInProgressEmployee}">Moje sprawy w trakcie</a>
-	<a th:href="@{/employee/casesFinishedEmployee}">Moje sprawy zakończone</a>
-	
-	</div>
+					<!-- 	authority level EMPLOYEE -->
+					<div sec:authorize="hasAuthority('employee')">
+						<h4>employee panel </h4>
+						<a th:href="@{/employee/casesInProgressEmployee}">My cases in progress</a><br/> 
+							<a th:href="@{/employee/casesFinishedEmployee}">My cases finished</a><br/> 
+					</div><br/> 
 
-	<!-- 	authority level MANAGER -->
-	<div sec:authorize = "hasAnyAuthority('manager', 'admin')">manager panel</div>
-	<a th:href="@{/manager/employeesManager}">obciążenie pracowników</a>
+					<!-- 	authority level MANAGER -->
+					<div sec:authorize="hasAnyAuthority('manager', 'admin')">
+						<h4>manager panel</h4>
+						<a th:href="@{/manager/employeesManager}">Employee list</a><br/> 
+					</div><br/> 
+				
+					<!-- 	authority level ADMIN -->
+					<div sec:authorize="hasAuthority('admin')">
+						<h4>admin panel</h4><br/> 
+					<a th:href="@{/admin/displayUsers}">List of Users</a><br/> 
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<!-- 	authority level ADMIN -->
-	<div sec:authorize = "hasAuthority('admin')">admin panel</div>
-	<a th:href="@{/admin/displayUsers}">użytkownicy systemu</a>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
