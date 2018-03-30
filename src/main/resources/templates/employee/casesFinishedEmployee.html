@@ -19,14 +19,14 @@
 	<table class="table table-striped">
 
 		<tr>
-			<th>numer sprawy</th>
-			<th>data wniosku</th>
-			<th>data wydania decyzji</th>
-			<th>inwestor imie</th>
-			<th>inwestor nazwisko</th>
-			<th>inwestor nazwa</th>
-			<th>sprawa adres</th>
-			<th>sprawa waga</th>
+			<th>Case number</th>
+			<th>Date</th>
+			<th>Decision date</th>
+			<th>Investor name</th>
+			<th>Investor surname</th>
+			<th>Company name</th>
+			<th>Case adress</th>
+			<th>Case complexity</th>
 		</tr>
 		<tr th:each="cases : ${casesList}">
 			<td th:text="${cases.sprawa_numer}" />
